@@ -1,5 +1,6 @@
 from jira.client import JIRA
 import pandas as pd
+import os
 
 
 # jira_connection function initiates the connection to jira API
@@ -36,6 +37,9 @@ def data_extraction(jira):
 # It initiates a Dataframe and appends all the requested issues in it
 # It creates an .xlsx with the elements of the Dataframe
 if __name__ == "__main__":
+    os.system("pip install pandas==0.25.0")
+    os.system("pip install jira==2.0.0")
+
     connection = jira_connection()
 
     if connection == 0:
